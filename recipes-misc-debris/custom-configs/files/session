@@ -1,0 +1,5 @@
+xrandr -s 1440x900
+
+sudo -u astro --preserve-env=DISPLAY ~astro/.session &
+
+exec matchbox-window-manager

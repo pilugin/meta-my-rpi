@@ -1,0 +1,49 @@
+From f50cf4551aa47c3cd210e34cc4fbb9de94eb63e3 Mon Sep 17 00:00:00 2001
+From: Kostiantyn Piliuhin <kpiliuhin@argo.ai>
+Date: Thu, 19 Nov 2020 23:52:56 +0100
+Subject: [PATCH] Fix find_library for camera blobs
+
+---
+ thirdparty/thirdparty.cmake | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/thirdparty/thirdparty.cmake b/thirdparty/thirdparty.cmake
+index 1b4e5c6a..817d7ebe 100644
+--- a/thirdparty/thirdparty.cmake
++++ b/thirdparty/thirdparty.cmake
+@@ -1318,7 +1318,7 @@ if(UNIX AND NOT APPLE)
+       set(zwoarch "armv6")
+       set(qhyarch "armv6")
+       set(toupcam_arch "armel")
+-    elseif (CMAKE_SYSTEM_PROCESSOR MATCHES "^armv7(.*)|arm64|aarch64|^armv8(.*)")
++    elseif (CMAKE_SYSTEM_PROCESSOR MATCHES "^armv7(.*)|arm64|aarch64|^armv8(.*)|arm")
+       if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+         set(zwoarch "armv8")
+         set(qhyarch "armv8")
+@@ -1352,7 +1352,7 @@ if(UNIX AND NOT APPLE)
+     if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+       find_library(asiCamera2
+              NAMES ASICamera2
+-             NO_DEFAULT_PATHS
++             NO_CMAKE_FIND_ROOT_PATH
+              PATHS ${PHD_PROJECT_ROOT_DIR}/cameras/zwolibs/${zwoarch})
+ 
+       if(NOT asiCamera2)
+@@ -1365,7 +1365,7 @@ if(UNIX AND NOT APPLE)
+       find_library(toupcam
+              NAMES toupcam
+              NO_DEFAULT_PATHS
+-             NO_CMAKE_SYSTEM_PATH
++             NO_CMAKE_FIND_ROOT_PATH
+              PATHS ${PHD_PROJECT_ROOT_DIR}/cameras/toupcam/linux/${toupcam_arch})
+       if(NOT toupcam)
+         message(FATAL_ERROR "Cannot find the toupcam drivers")
+@@ -1381,7 +1381,7 @@ if(UNIX AND NOT APPLE)
+         # be careful not to pick up any other qhy lib on the system
+         find_library(qhylib
+                NAMES qhyccd
+-               NO_DEFAULT_PATH
++               NO_CMAKE_FIND_ROOT_PATH
+                PATHS ${PHD_PROJECT_ROOT_DIR}/cameras/qhyccdlibs/linux/${qhyarch})
+         if(NOT qhylib)
+           message(FATAL_ERROR "Cannot find the qhy SDK libs")
