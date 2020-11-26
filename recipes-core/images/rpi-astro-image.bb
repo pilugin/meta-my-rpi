@@ -18,9 +18,3 @@ ASTRO_INSTALL = "phd2 astrodmx"
 
 IMAGE_INSTALL += " ${NETWORK_INSTALL} ${XORG_INSTALL} ${DEBUG_INSTALL} ${ASTRO_INSTALL} \
     custom-configs"
-
-#PREFERRED_PROVIDER_virtual/base-utils="coreutils"
-
-#inherit extrausers
-#IMAGE_CLASSES += "extrausers"
-#EXTRA_USERS_PARAMS = "useradd -m -r -s /bin/bash -G video,audio,plugdev,users astro;"

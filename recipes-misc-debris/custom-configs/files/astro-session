@@ -1,9 +1,0 @@
-#!/bin/sh
-
-phd2 &
-astrodmx &
-
-while true
-do
-    xterm
-done
