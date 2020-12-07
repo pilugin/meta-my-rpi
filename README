@@ -1,0 +1,12 @@
+Bootstrap commands:
+
+source ./poky/oe-init-build-env build
+
+bitbake-layers add-layer ../meta-raspberrypi
+bitbake-layers add-layer ../meta-openembedded/meta-oe
+bitbake-layers add-layer ../meta-openembedded/meta-python
+bitbake-layers add-layer ../meta-openembedded/meta-multimedia
+bitbake-layers add-layer ../meta-openembedded/meta-networking
+bitbake-layers add-layer ../meta-my-rpi
+
+cat ../meta-my-rpi/conf/local.conf.tail >> conf/local.conf
