@@ -37,10 +37,7 @@ do_patch() {
     rm -fr ${S_}
 }
 
-#DEPENDS += " patchelf-native"
-
 DEPENDS += "gcc-runtime"
 RDEPENDS_${PN} += " libglu libltdl "
-# "fontconfig bash expat pango libxtst"
 
 FILES_${PN} = "*"

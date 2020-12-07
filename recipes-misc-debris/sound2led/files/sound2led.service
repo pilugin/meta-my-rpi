@@ -1,0 +1,10 @@
+[Unit]
+Description=Blink ETH leds on audio playback
+
+[Service]
+User=root
+Restart=always
+ExecStart=/usr/bin/sound2led.sh
+
+[Install]
+WantedBy=multi-user.target
