@@ -1,0 +1,12 @@
+MACHINE = "raspberrypi4"
+DISTRO_FEATURES_append = " systemd pam alsa"
+VIRTUAL-RUNTIME_init_manager = "systemd"
+DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
+VIRTUAL-RUNTIME_initscripts = ""
+IMAGE_FEATURE_append = " x11-base ssh-server-dropbear"
+
+ENABLE_UART = "1"
+HDMI_FORCE_HOTPLUG = "1"
+HDMI_GROUP = "2"
+HDMI_MODE = "47"
+WKS_FILE = "sdimage-astro-64G.wks"
