@@ -1,0 +1,29 @@
+From bac8808b2e62d8b527bf6fcc2e6054257f9dbf31 Mon Sep 17 00:00:00 2001
+From: Kostiantyn Piliuhin <kpiliuhin@argo.ai>
+Date: Sat, 19 Dec 2020 23:00:24 +0100
+Subject: [PATCH] Call 'ledbell' binary on wxBell()
+
+---
+ src/x11/utils.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/x11/utils.cpp b/src/x11/utils.cpp
+index 16e7995eba..8d25873604 100644
+--- a/src/x11/utils.cpp
++++ b/src/x11/utils.cpp
+@@ -41,6 +41,7 @@
+ 
+ #include <ctype.h>
+ #include <stdarg.h>
++#include <stdlib.h>
+ #include <dirent.h>
+ #include <string.h>
+ #include <sys/stat.h>
+@@ -96,6 +97,7 @@ bool wxCheckForInterrupt(wxWindow *WXUNUSED(wnd))
+ // Emit a beeeeeep
+ void wxBell()
+ {
++    system("ledbell");
+     // Use current setting for the bell
+     XBell ((Display*) wxGetDisplay(), 0);
+ }

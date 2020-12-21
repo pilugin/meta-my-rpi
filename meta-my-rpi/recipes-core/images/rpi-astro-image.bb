@@ -12,9 +12,7 @@ NETWORK_INSTALL = "hostapd dhcp-server"
 
 XORG_INSTALL = "fontconfig fontconfig-utils xterm xf86-video-armsoc x11vnc"
 
-DEBUG_INSTALL = "strace nmap"
-
 ASTRO_INSTALL = "phd2 astrodmx"
 
-IMAGE_INSTALL += " ${NETWORK_INSTALL} ${XORG_INSTALL} ${DEBUG_INSTALL} ${ASTRO_INSTALL} \
-    custom-configs sound2led"
+IMAGE_INSTALL += " ${NETWORK_INSTALL} ${XORG_INSTALL} ${ASTRO_INSTALL} \
+    custom-configs"

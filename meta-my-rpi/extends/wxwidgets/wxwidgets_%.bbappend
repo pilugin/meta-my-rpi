@@ -2,6 +2,11 @@
 # So do the necessary changes in a way that is compatibile to meta-oe dunfell
 # and master
 
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+SRC_URI += "file://0001-Call-ledbell-binary-on-wxBell.patch"
+
+RDEPENDS_${PN} += " ledbell"
+
 inherit binconfig
 
 PACKAGECONFIG_append = " ${@bb.utils.filter('DISTRO_FEATURES', 'opengl', d)}"
