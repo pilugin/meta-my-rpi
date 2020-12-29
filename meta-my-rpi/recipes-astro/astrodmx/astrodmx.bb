@@ -12,12 +12,10 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "https://www.linux-astro-imaging.uk/sites/downloads/linux/dmx/astrodmx-glibc-2.27_${PV}_armhf.manual.tar.gz;subdir=${BP}"
-SRC_URI[md5sum] = "4f7f22cf712d9288f0803965a7543436"
-SRC_URI[sha1sum] = "996dd17aa719c2621a5342f327418888056a968a"
-SRC_URI[sha256sum] = "aa648ed453f709cd196fbf7e58126a07b3c1ada54de73dd7f785d84866949b19"
-SRC_URI[sha384sum] = "c00ab39a2965f45a4a0f6cd1fdf27051b9bace6082e6fe061861239b9052d59dedf333d9794b9326db3465974c52598f"
-SRC_URI[sha512sum] = "12e4b2e98c31108d2d3da7e94a3eba31aca98d69bef2605c374b0dd62c8ac8e6ee7c46cd5c71d77bdf80e669578bc142490f348fd744c794ec56cdddae6d8f25"
+PV = "0.82.2"
+
+SRC_URI = "https://www.astrodmx-capture.org.uk/sites/downloads/astrodmx/current/rpi/astrodmx-glibc-2.27_${PV}_armhf-manual.tar.gz"
+SRC_URI[sha256sum] = "756897cbd3e2c21141035d0ff83387511c6b7e5d0ae76db88bc257010084cdf8"
 
 inherit bin_package
 
